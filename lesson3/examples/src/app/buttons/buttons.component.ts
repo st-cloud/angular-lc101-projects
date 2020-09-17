@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonsComponent implements OnInit {
    buttonHeading: string = "Buttons"
-   inactive: boolean = false;
+   activeButton: boolean[] = [true, true, true];
 
    constructor() { }
 
    ngOnInit() { }
+
+   reactivateButtons() {
+      for (let i = 0; i < this.activeButton.length; i++) {
+         this.activeButton[i] = true;
+      }
+      return this.activeButton;
+   }
 
 }
